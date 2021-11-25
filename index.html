@@ -8,6 +8,33 @@
     <script src="static/library.js" defer></script>
 </head>
 <body>
-    
+    <form name="addBook" autocomplete="on">
+        <label for="getBookName">Book Name</label>
+        <input type="text" id="getBookName" name="getBookName" placeholder="Enter book's name" required>
+
+        <label for="getBookAuthor">Book's Author</label>
+        <input type="text" id="getBookAuthor" name="getBookAuthor" placeholder="Enter book's author" required>
+
+        <label for="getPagesNumber">Number of Pages</label>
+        <input type="number" id="getPagesNumber" name="getPagesNumber" placeholder="Enter Number of Pages" min="1" required>
+
+        <label for="wasRead">Have you read the book?</label>
+        <input type="checkbox" id="wasRead" name="wasRead">
+
+        <input type="submit" value="Add Book"></input>
+    </form>
+    <br>
+    <table id="library">
+        <thead>
+            <tr>
+                <th scope="col">Book</th>
+                <th scope="col">Author</th>
+                <th scope="col">Pages</th>
+                <th scope="col">Read?</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </body>
 </html>
