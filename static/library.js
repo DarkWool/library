@@ -4,10 +4,28 @@ let library = [
     {title: 'The Hobbit', author: 'J.R.R. Tolkien', pagesNumber: 295, wasRead: 'not yet read'}
 ];
 
-let form = document.getElementsByName('addBook')[0];
-let tBody = document.getElementsByTagName('tbody')[0];
+const form = document.getElementsByName('addBookForm')[0];
+const tBody = document.getElementsByTagName('tbody')[0];
 
-form.addEventListener("submit", addBookToLibrary);
+const modal = document.getElementById('modal');
+const openModalBtn = document.getElementById('addNew');
+const closeModalBtn = document.getElementById('close-button');
+const darkOverlay = document.getElementById('darkOverlay');
+
+form.addEventListener('submit', addBookToLibrary);
+openModalBtn.addEventListener('click', openModal);
+closeModalBtn.addEventListener('click', closeModal)
+darkOverlay.addEventListener('click', closeModal);
+
+function openModal() {
+    darkOverlay.classList.add('active');
+    modal.classList.add('active');
+}
+
+function closeModal() {
+    darkOverlay.removeAttribute('class');
+    modal.classList.remove('active');
+};
 
 function addBookToLibrary(e) {
     e.preventDefault();
@@ -16,6 +34,7 @@ function addBookToLibrary(e) {
         form.elements['getPagesNumber'].value,
         form.elements['wasRead'].checked));
 
+    closeModal();
     showBooks();
     form.reset();
 }

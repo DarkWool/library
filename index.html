@@ -6,24 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library project!</title>
     <script src="static/library.js" defer></script>
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="https://necolas.github.io/normalize.css/latest/normalize.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <form name="addBook" autocomplete="on">
-        <label for="getBookName">Book Name</label>
-        <input type="text" id="getBookName" name="getBookName" placeholder="Enter book's name" required>
+    <button type="button" id="addNew">Add new Book</button>
 
-        <label for="getBookAuthor">Book's Author</label>
-        <input type="text" id="getBookAuthor" name="getBookAuthor" placeholder="Enter book's author" required>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <p class="modal-title">Add new book</p>
+            <span class="material-icons" id="close-button">
+                close
+            </span>
+        </div>
+        <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis euismod magna, quis rutrum ante. Maecenas aliquet,
+        velit in iaculis rhoncus, est nulla fermentum elit, sed suscipit sapien nisl eu orci. Nullam pharetra felis ac faucibus
+        bibendum. Quisque at nisl augue. Cras commodo semper ipsum sed efficitur. Sed non feugiat sem. Fusce rutrum at libero
+        vitae dignissim. Suspendisse dictum a tortor eget convallis. Nam et sem nec augue venenatis dignissim. Vestibulum mi
+        nulla, venenatis vitae placerat a, viverra ac orci. Phasellus sed turpis ac ligula porttitor laoreet. Integer fringilla
+        pellentesque felis in pulvinar. Praesent eu orci a enim tempor interdum. Aliquam tristique augue id massa egestas
+        varius. Morbi nulla felis, bibendum et interdum quis, ultricies quis sem.
+        
+        Quisque ex elit, maximus quis molestie vel, condimentum sed risus. Integer pharetra purus vel odio pretium ultrices.
+        Cras lorem erat, vestibulum sit amet porta eget, fringilla vitae felis. Pellentesque mollis magna nec eros pretium
+        tempus. Aenean pharetra posuere dapibus. Nunc eu molestie metus. Curabitur sit amet lectus et tortor sollicitudin
+        vestibulum nec a nisl. Sed pretium libero nibh, in aliquam felis placerat in. Aenean rutrum, libero at lobortis
+        consequat, nisl turpis laoreet ex, vitae aliquam nunc eros ac nisl. Mauris id metus lacus. Integer vitae diam id nisi
+        dictum rutrum. Aliquam ultricies rhoncus sapien, et porta felis. Pellentesque ac nibh non dolor malesuada egestas. Class
+        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent sed est at metus varius
+        varius.</p>
+            <form name="addBookForm" autocomplete="on">
+                <label for="getBookName">Book Name</label>
+                <input type="text" id="getBookName" name="getBookName" placeholder="Enter book's name" required>
+            
+                <label for="getBookAuthor">Book's Author</label>
+                <input type="text" id="getBookAuthor" name="getBookAuthor" placeholder="Enter book's author" required>
+            
+                <label for="getPagesNumber">Number of Pages</label>
+                <input type="number" id="getPagesNumber" name="getPagesNumber" placeholder="Enter Number of Pages" min="1" required>
+            
+                <label for="wasRead">Have you read the book?</label>
+                <input type="checkbox" id="wasRead" name="wasRead">
+            
+                <input type="submit" value="Add Book"></input>
+            </form>
+        </div>
+    </div>
+    <div id="darkOverlay"></div>
 
-        <label for="getPagesNumber">Number of Pages</label>
-        <input type="number" id="getPagesNumber" name="getPagesNumber" placeholder="Enter Number of Pages" min="1" required>
-
-        <label for="wasRead">Have you read the book?</label>
-        <input type="checkbox" id="wasRead" name="wasRead">
-
-        <input type="submit" value="Add Book"></input>
-    </form>
-    <br>
     <table id="library">
         <thead>
             <tr>
