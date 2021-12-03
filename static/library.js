@@ -12,7 +12,9 @@ const addCardBtn = document.createElement('div');
 addCardBtn.id = 'addNew';
 addCardBtn.classList.add('card');
 addCardBtn.insertAdjacentHTML('beforeend',
-    '<span class="material-icons">add_circle</span>');
+'<span class="material-icons">add_circle</span>');
+
+const darkMode = document.getElementById('dark-mode');
 
 const modal = document.getElementsByClassName('modal')[0];
 const openModalBtn = document.getElementById('addNew');
@@ -23,6 +25,7 @@ form.addEventListener('submit', addBookToLibrary);
 addCardBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal)
 darkOverlay.addEventListener('click', closeModal);
+darkMode.addEventListener('click', toggleDarkMode);
 
 function openModal() {
     darkOverlay.classList.add('active');
@@ -154,6 +157,10 @@ function Book(title, author, description, pagesNumber, wasRead) {
     this.description = description;
     this.pagesNumber = pagesNumber;
     this.wasRead = wasRead;
+}
+
+function toggleDarkMode(e) {
+    return (document.body.classList.contains('dark')) ? document.body.classList.remove('dark') : document.body.classList.add('dark');
 }
 
 updateLibrary();

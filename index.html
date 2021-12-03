@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Library project!</title>
+    <title>My Library</title>
     <script src="static/library.js" defer></script>
     <link href="https://necolas.github.io/normalize.css/latest/normalize.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -15,7 +15,8 @@
         <section id="bookLibrary">
             <header id="libraryHeader">
                 <h1>My library</h1>
-                <p>© DarkWool 2021. Made for The Odin project.</p>
+                <button type="button" class="material-icons" id="dark-mode">dark_mode</button>
+                <p>Copyright © 2021 DarkWool. Made for The Odin Project.</p>
             </header>
             <div id="libraryContent">
             </div>
@@ -41,8 +42,7 @@
                         required>
 
                     <label for="getBookDescription">Book Summary (optional)</label>
-                    <textarea id="getBookDescription" name="getBookDescription" placeholder="Enter Book Description" rows="7" maxlength="512">
-                    </textarea>
+                    <textarea id="getBookDescription" name="getBookDescription" placeholder="Enter Book Description" rows="8" maxlength="512"></textarea>
         
                     <input type="checkbox" id="wasRead" name="wasRead" checked>
                     <label for="wasRead">Have you read the book?</label>
@@ -52,8 +52,7 @@
             </div>
         </div>
 
-        <div id="darkOverlay">
-        </div>
+        <div id="darkOverlay"></div>
     </main>
 </body>
 </html>
