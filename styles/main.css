@@ -68,7 +68,7 @@ a {
 
 
 /* Library section */
-#bookLibrary {
+#library {
     width: 100%;
     max-width: 1300px;
     margin: 6rem auto;
@@ -97,13 +97,13 @@ a {
     transition: transform .25s cubic-bezier(.18,.89,.32,1.28);
 }
 
-#read-progress {
+#readProgress {
     width: 100%;
     max-width: 150px;
     text-align: center;
 }
 
-#read-progress label {
+#readProgress label {
     margin-bottom: .5rem;
 }
 
@@ -137,7 +137,7 @@ progress::-webkit-progress-value {
     background-image: var(--mainGradient);
 }
 
-#libraryContent {
+#libraryBody {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -180,6 +180,7 @@ progress::-webkit-progress-value {
 
 .card h2 {
     font-size: 2.6rem;
+    line-height: 1.1;
 }
 
 .card .book-author {
@@ -211,6 +212,7 @@ progress::-webkit-progress-value {
 .book-description {
     font-size: 1.4rem;
     line-height: 1.2;
+    text-align: left;
     color: var(--secondaryTextColor);
 }
 
@@ -374,6 +376,10 @@ button, input[type='submit'] {
     margin-right: .5rem;
 }
 
+.read-btn {
+    position: relative;
+}
+
 .desc-btn span.material-icons {
     position: relative;
     top: 0;
@@ -414,7 +420,7 @@ button > .material-icons {
 }
 
 #addNew:hover .material-icons {
-    top: 40%;
+    top: 42%;
     transform: translate(-50%, -50%) rotate(270deg) scale(1.2);
 }
 
@@ -457,7 +463,7 @@ button > .material-icons {
 
 /* Media queries */
 @media screen and (max-width: 1024px) {
-    #bookLibrary {
+    #library {
         margin: 0 auto;
     }
 
@@ -504,6 +510,33 @@ button > .material-icons {
         color: white;
         -webkit-text-fill-color: white;
         border-radius: .5rem;
+    }
+
+    .read-btn:hover::before {
+        content: '';
+        border-top: 1.2rem solid rgb(0, 0, 0);
+        border-left: 1.2rem solid rgb(0, 0, 0);
+        border-right: 1.2rem solid transparent;
+        border-bottom: 1.2rem solid transparent;
+        position: absolute;
+        background-color: transparent;
+        bottom: 43px;
+        left: 90px;
+    }
+
+    .read-btn:hover::after {
+        content: 'ⓘ When you finish a book you can come back to update your progress.';
+        color: white;
+        background-color: black;
+        position: absolute;
+        bottom: 55px;
+        width: 280px;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: 1.1;
+        letter-spacing: 0;
+        padding: 1.5rem;
+        border-radius: 1rem;
     }
 
     .desc-btn:hover span.material-icons {
