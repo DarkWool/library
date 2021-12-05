@@ -16,11 +16,18 @@
             <header id="libraryHeader">
                 <h1>My library</h1>
                 <button type="button" class="material-icons" id="dark-mode">dark_mode</button>
-                <p>Copyright © 2021 DarkWool. Made for The Odin Project.</p>
+                <div id="read-progress">
+                    <label for="books-read"></label>
+                    <progress value="50" max="100" id="books-read"></progress>
+                </div>
             </header>
             <div id="libraryContent">
             </div>
         </section>
+
+        <footer>
+            <p>Copyright © 2021 DarkWool <a href="https://github.com/DarkWool/library">(GitHub)</a>. Made for The Odin Project.</p>
+        </footer>
 
         <div class="modal">
             <header class="modal-header">
@@ -51,7 +58,6 @@
                 </form>
             </div>
         </div>
-
         <div id="darkOverlay"></div>
     </main>
 </body>
