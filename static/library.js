@@ -179,12 +179,22 @@ function showDescription(e) {
     }
 }
 
-function Book(title, author, description, pagesNumber, wasRead) {
-    this.title = title;
-    this.author = author;
-    this.description = description;
-    this.pagesNumber = pagesNumber;
-    this.wasRead = wasRead;
+class Book {
+    constructor(title, author, description, pagesNumber, wasRead) {
+        this.title = title;
+        this.author = author;
+        this.description = description;
+        this.pagesNumber = pagesNumber;
+        this.wasRead = wasRead;
+    }
+
+    get wasRead() {
+        return this._wasRead;
+    }
+
+    set wasRead(status) {
+        this._wasRead = status; 
+    }
 }
 
 // Dark mode functions
