@@ -37,22 +37,41 @@
                 </span>
             </header>
             <div class="modal-body">
-                <form name="addBookForm" autocomplete="on">
-                    <label for="getBookName">Book Name</label>
-                    <input type="text" id="getBookName" name="getBookName" placeholder="Enter book's name" required>
+                <form novalidate name="addBookForm" autocomplete="on" novalidate>
+                    <div>
+                        <label for="getBookName">Book Name</label>
+                        <input type="text" id="getBookName" name="getBookName" placeholder="Enter book's name" required>
+                        <span class="form-invalid">
+                            Your book needs a name!
+                        </span>
+                    </div>
         
-                    <label for="getBookAuthor">Book's Author</label>
-                    <input type="text" id="getBookAuthor" name="getBookAuthor" placeholder="Enter book's author" required>
+                    <div>
+                        <label for="getBookAuthor">Book's Author</label>
+                        <input type="text" id="getBookAuthor" name="getBookAuthor" placeholder="Enter book's author" required>
+                        <span class="form-invalid">
+                            Your book needs an author!
+                        </span>
+                    </div>
         
-                    <label for="getPagesNumber">Number of Pages</label>
-                    <input type="number" id="getPagesNumber" name="getPagesNumber" placeholder="Enter Number of Pages" min="1"
-                        required>
+                    <div>
+                        <label for="getPagesNumber">Number of Pages</label>
+                        <input type="number" id="getPagesNumber" name="getPagesNumber" placeholder="Enter Number of Pages" min="1"
+                            required>
+                        <span class="form-invalid">
+                            The number of pages is required
+                        </span>
+                    </div>
 
-                    <label for="getBookDescription">Book Summary (optional)</label>
-                    <textarea id="getBookDescription" name="getBookDescription" placeholder="Enter Book Description" rows="8" maxlength="512"></textarea>
+                    <div>
+                        <label for="getBookDescription">Book Summary (optional)</label>
+                        <textarea id="getBookDescription" name="getBookDescription" placeholder="Enter Book Description" rows="8" maxlength="512"></textarea>
+                    </div>
         
-                    <input type="checkbox" id="wasRead" name="wasRead" checked>
-                    <label for="wasRead">Have you read the book?</label>
+                    <div>
+                        <input type="checkbox" id="wasRead" name="wasRead" checked>
+                        <label for="wasRead">Have you read the book?</label>
+                    </div>
         
                     <input type="submit" value="Add Book"></input>
                 </form>

@@ -29,6 +29,9 @@ let library = [
 ];
 
 const form = document.getElementsByName('addBookForm')[0];
+const bookNameInput = document.getElementById("getBookName");
+const bookAuthorInput = document.getElementById("getBookAuthor");
+const pagesNumberInput = document.getElementById("getPagesNumber");
 const bookLibrary = document.getElementById('libraryBody');
 const darkModeBtn = document.getElementById('dark-mode');
 const booksProgress = document.getElementById('books-read');
@@ -48,10 +51,24 @@ darkModeBtn.addEventListener('click', toggleDarkMode);
 newBookBtn.addEventListener('click', openModal);
 closeModalBtn.addEventListener('click', closeModal)
 darkOverlay.addEventListener('click', closeModal);
+bookNameInput.addEventListener("invalid", showFormError);
+bookAuthorInput.addEventListener("invalid", showFormError);
+pagesNumberInput.addEventListener("invalid", showFormError);
+
 
 function addBookToLibrary(e) {
-    // Prevents the form refreshing the page.
+    // Prevents the form from refreshing the page.
     e.preventDefault();
+    
+    // Remove active error messages
+    const invalidInputs = addBookForm.getElementsByClassName("form-invalid");
+    for (const input of invalidInputs) {
+        hideFormError(input);
+    }
+
+    // If there are invalid form fields then return 
+    if (addBookForm.checkValidity() === false) return;
+
     library.push(new Book(
         form.elements['getBookName'].value,
         form.elements['getBookAuthor'].value,
@@ -219,6 +236,19 @@ function closeModal() {
     darkOverlay.removeAttribute('class');
     modal.classList.remove('active');
 };
+
+// Form validation
+function showFormError(e) {
+    const target = e.currentTarget;
+    const errorMessage = target.nextElementSibling;
+    if (errorMessage) {
+        errorMessage.classList.add("active");
+    }
+}
+
+function hideFormError(input) {
+    input.classList.remove("active");
+}
 
 
 updateLibrary();

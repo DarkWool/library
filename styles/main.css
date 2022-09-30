@@ -290,8 +290,8 @@ label {
     margin-bottom: 1rem;
 }
 
-input, textarea {
-    margin-bottom: 2rem;
+form > div {
+    margin-bottom: 15px;
 }
 
 input[type='checkbox'] {
@@ -313,6 +313,17 @@ textarea,
 
 .modal-body input:last-child {
     margin-bottom: 0;
+}
+
+.form-invalid {
+    display: none;
+    margin-top: 5px;
+    font-size: 1.2rem;
+    color: hsl(0, 100%, 65%);
+}
+
+.form-invalid.active {
+    display:block;
 }
 
 #close-button {
